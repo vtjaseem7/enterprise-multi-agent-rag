@@ -1,0 +1,11 @@
+Acme Cloud API - Authentication & Troubleshooting Guide
+
+1. API Request Limits
+The maximum API request payload size is 10 MB per request. Requests exceeding 10 MB return HTTP 413 Payload Too Large.
+
+2. Error Code AUTH-401
+Cause: Error AUTH-401 occurs when a JWT bearer token is expired, malformed, or signed with an outdated rotation key.
+Solution: Refresh the access token by calling POST /api/v1/auth/refresh with a valid refresh token. If the issue persists after key rotation, clear the client token cache and re-authenticate.
+
+3. Rate Limiting
+Standard customer accounts are limited to 100 requests per minute. Enterprise accounts are limited to 1,000 requests per minute.

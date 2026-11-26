@@ -1,0 +1,5 @@
+﻿Acme Internal Incident Postmortem - Release v2.4
+
+Confidential: Admin & Engineering Only.
+After deploying release v2.4, API 500 errors spiked by 35% because the Redis connection pool was capped at 10 connections in production.
+Fix: Increase REDIS_MAX_CONNECTIONS to 200 and deploy hotfix v2.4.1.

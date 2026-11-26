@@ -1,0 +1,34 @@
+[
+  {
+    "id": "eval_01",
+    "query": "What is the solution for error AUTH-401?",
+    "role": "customer",
+    "expected_source": "auth_guide.txt",
+    "must_contain": ["/api/v1/auth/refresh", "refresh"],
+    "expected_route": "simple"
+  },
+  {
+    "id": "eval_02",
+    "query": "What is the maximum API request payload size and what error is returned if exceeded?",
+    "role": "customer",
+    "expected_source": "auth_guide.txt",
+    "must_contain": ["10 MB", "413"],
+    "expected_route": "simple"
+  },
+  {
+    "id": "eval_03",
+    "query": "Investigate why API 500 errors spiked after release v2.4.",
+    "role": "admin",
+    "expected_source": "internal_postmortem.txt",
+    "must_contain": ["Redis", "10", "200"],
+    "expected_route": "complex"
+  },
+  {
+    "id": "eval_04",
+    "query": "Investigate why API 500 errors spiked after release v2.4.",
+    "role": "customer",
+    "expected_source": null,
+    "must_contain": ["could not find"],
+    "expected_route": "complex"
+  }
+]
